@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/10 border border-white/20;
+  }
+  
+  .food-card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+  
+  .active-menu {
+    @apply bg-red-500 text-white;
+  }
+  
+  .menu-button {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-red-100;
+  }
+}
