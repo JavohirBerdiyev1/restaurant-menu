@@ -69,7 +69,7 @@ export default function EuropeanPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50">
+      <header className="bg-white/70 backdrop-blur-lg shadow-lg sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -100,7 +100,7 @@ export default function EuropeanPage() {
       </header>
 
       {/* Top Menu Navigation */}
-      <nav className="bg-white shadow-sm sticky top-16 z-40">
+      <nav className="bg-white/70 backdrop-blur-lg shadow-sm sticky top-16 z-40">
         <div className="container mx-auto px-4">
           <div className="flex space-x-8 overflow-x-auto">
             {menuCategories.map((category) => (
@@ -122,7 +122,7 @@ export default function EuropeanPage() {
       </nav>
 
       {/* Category Menu */}
-      <div className="bg-white border-b sticky top-32 z-30">
+      <div className="bg-white/70 backdrop-blur-lg border-b sticky top-32 z-30">
         <div className="container mx-auto px-4">
           <div className="flex space-x-1 overflow-x-auto py-4">
             {categories.map((category) => (
@@ -202,7 +202,7 @@ export default function EuropeanPage() {
                       <span className="text-2xl font-bold text-red-500">
                         {dish.price.toLocaleString()} {t('som')}
                       </span>
-                      <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors flex items-center space-x-2">
+                      <button className="btn-primary">
                         <ShoppingCart className="w-4 h-4" />
                         <span>{t('add_to_cart')}</span>
                       </button>
