@@ -80,7 +80,21 @@ export const europeanDishes = {
       image: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=400&h=300&fit=crop",
       price: 35000,
       description: { uz: "Nemis uslubida schnitzel", ru: "Шницель по-немецки", en: "German-style schnitzel" }
-    }
+    },
+    {
+      id: 5,
+      name: { uz: "Казан кебаб", ru: "Казан кебаб", en: "Казан кебаб" },
+      image: "/food/qozon1.jpg",
+      price: 45000,
+      description: { uz: "Мясо говядина артофель Корейская соль соль", ru: "Мясо говядина артофель Корейская соль соль", en: "Tender beef" }
+    },
+    ,{
+      id: 6,
+      name: { uz: "Казан кебаб", ru: "Казан кебаб", en: "Казан кебаб" },
+      image: "/food/qozon1.jpg",
+      price: 45000,
+      description: { uz: "Мясо говядина артофель Корейская соль соль", ru: "Мясо говядина артофель Корейская соль соль", en: "Tender beef" }
+    },
   ],
   dessert: [
     {
@@ -174,7 +188,28 @@ export const uzbekDishes = {
       image: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&h=300&fit=crop",
       price: 22000,
       description: { uz: "Bug'da pishgan manti", ru: "Манты на пару", en: "Steamed dumplings" }
-    }
+    },
+    {
+      id: 58,
+      name: { uz: "Manti", ru: "Манты", en: "Manti" },
+      image: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&h=300&fit=crop",
+      price: 22000,
+      description: { uz: "Bug'da pishgan manti", ru: "Манты на пару", en: "Steamed dumplings" }
+    },
+    {
+      id: 7,
+      name: { uz: "Казан кебаб", ru: "Казан кебаб", en: "Казан кебаб" },
+      image: "/food/qozon1.jpg",
+      price: 45000,
+      description: { uz: "Мясо говядина артофель Корейская соль соль", ru: "Мясо говядина артофель Корейская соль соль", en: "Tender beef" }
+    },
+    ,{
+      id: 6,
+      name: { uz: "Казан кебаб", ru: "Казан кебаб", en: "Казан кебаб" },
+      image: "/food/qozon1.jpg",
+      price: 45000,
+      description: { uz: "Мясо говядина артофель Корейская соль соль", ru: "Мясо говядина артофель Корейская соль соль", en: "Tender beef" }
+    },
   ],
   dessert: [
     {
