@@ -2,8 +2,8 @@ const CACHE_NAME = 'restaurant-menu-cache-v1';
 const urlsToCache = [
   '/',
   '/manifest.json',
-  '/icon-192x192.png',
-  '/icon-512x512.png'
+  '/icon-192x192.jpg',
+  '/icon-512x512.jpg'
 ];
 
 self.addEventListener('install', event => {

@@ -1,22 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
-import { europeanDishes } from '@/moke/data'
-import { Heart, Globe } from 'lucide-react'
-import Link from 'next/link'
+import { europeanDishes, categories as catMap } from '@/moke/data'
+import { Heart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import CategorySidebar from '@/components/CatalogSidebar'
 import Header from '@/components/Header'
-
-const categories = [
-  { id: 'soup', icon: '🍲', name: { uz: "Sho'rvalar", ru: 'Супы', en: 'Soups' } },
-  { id: 'main_course', icon: '🍛', name: { uz: 'Asosiy taomlar', ru: 'Основные блюда', en: 'Main Courses' } },
-  { id: 'dessert', icon: '🍰', name: { uz: 'Shirinliklar', ru: 'Десерты', en: 'Desserts' } },
-]
-
-const menuCategories = [
-  { id: 'uzbek', icon: '🇺🇿', name: { uz: "O'zbek taomlari", ru: 'Узбекская', en: 'Uzbek' } },
-  { id: 'european', icon: '🍝', name: { uz: 'Yevropa taomlari', ru: 'Европейская', en: 'European' } },
-  { id: 'bar', icon: '🍹', name: { uz: 'Bar', ru: 'Бар', en: 'Bar' } },
-]
 
 export default function EuropeanPage() {
   const { i18n, t } = useTranslation()
@@ -25,14 +12,29 @@ export default function EuropeanPage() {
   const [favs, setFavs] = useState([])
   const catRefs = useRef({})
 
+  // JSON‑dagi kategoriyalarni avtomatik olish
+const categories = [
+    { id: 'main_course', icon: '🍛', name: { uz: 'Asosiy taomlar', ru: 'Основные блюда', en: 'Main Courses' } },
+    { id: 'grill',       icon: '🔥', name: { uz: 'Gril',           ru: 'Гриль',        en: 'Grill' } },
+    { id: 'seafood',     icon: '🦐', name: { uz: 'Dengiz taomlari',ru: 'Морепродукты', en: 'Seafood' } },
+    { id: 'nuts',        icon: '🥜', name: { uz: 'Yongʻoqlar',     ru: 'Орехи',        en: 'Nuts & Snacks' } },
+    // salad
+    {
+      id: 'salad',
+      icon: '🥗',
+      name: { uz: 'Salatlar', ru: 'Салаты', en: 'Salads' }
+    },
+    { id: 'dessert',     icon: '🍰', name: { uz: 'Shirinliklar',   ru: 'Десерты',       en: 'Desserts' } }
+  ]
+  
+  
   const changeLang = (l) => {
     i18n.changeLanguage(l)
     setLang(l)
   }
 
-  const toggleFav = (id) => {
-    setFavs((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]))
-  }
+  const toggleFav = (id) =>
+    setFavs((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]))
 
   useEffect(() => {
     const onScroll = () => {
@@ -50,55 +52,65 @@ export default function EuropeanPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
-      {/* HEADER */}
-      <Header lang={lang} setLang={changeLang} currentPage="european"/>
+    <div className="min-h-screen bg-base font-sans">
+      <Header lang={lang} setLang={changeLang} currentPage="european" />
 
-      {/* BODY */}
       <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">
         <CategorySidebar
           categories={categories}
           activeCat={activeCat}
           onCategoryClick={(id) => {
             setActiveCat(id)
-            const el = catRefs.current[id]
-            el && el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            catRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           }}
           lang={lang}
         />
 
         <main className="flex-1">
           {categories.map((c) => (
-            <section key={c.id} ref={(el) => (catRefs.current[c.id] = el)} className="mb-12 scroll-mt-24">
-              <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4">
+            <section
+              key={c.id}
+              ref={(el) => (catRefs.current[c.id] = el)}
+              className="mb-6 scroll-mt-24"
+            >
+              <h2 className="flex items-center gap-3 text-2xl mb-4 text-white font-forum">
                 <span className="text-3xl">{c.icon}</span>
                 {c.name[lang]}
               </h2>
-              <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-6">
-                {(europeanDishes[c.id] || []).map((d) => (
-                  <div key={d.id} className="bg-white rounded-xl shadow hover:shadow-md p-4 transition">
-                    <div className="relative mb-3">
-                      <img
-                        src={d.image}
-                        alt={d.name[lang]}
-                        className="w-full h-40 object-cover rounded-lg"
-                      />
-                      <button
-                        onClick={() => toggleFav(d.id)}
-                        className="absolute top-2 right-2 bg-white rounded-full p-1 shadow"
-                      >
-                        <Heart
-                          className={`w-5 h-5 ${
-                            favs.includes(d.id) ? 'text-red-500 fill-current' : 'text-gray-400'
-                          }`}
+
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
+                {(europeanDishes[c.id] || []).map((d) => {
+                  const isFav = favs.includes(d.id)
+                  return (
+                    <div
+                      key={d.id}
+                      className="rounded-xl border border-white/10 overflow-hidden"
+                    >
+                      {/* image */}
+                      <div className="relative">
+                        <img
+                          src={d.image}
+                          alt={d.name[lang]}
+                          className="w-full h-[180px] object-cover"
                         />
-                      </button>
+                      
+                      </div>
+
+                      {/* text */}
+                      <div className="p-2 text-center">
+                        <h3 className="text-[18px] font-forum truncate text-white">
+                          {d.name[lang]}
+                        </h3>
+                        <p className="text-[12px] text-text-muted line-clamp-2">
+                          {d.description[lang]}
+                        </p>
+                        <div className="mt-2 font-forum text-accent">
+                          {d?.price?.toLocaleString()} {t('som')}
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold truncate">{d.name[lang]}</h3>
-                    <p className="text-sm text-gray-500 line-clamp-2">{d.description[lang]}</p>
-                    <div className="text-red-500 font-bold mt-2">{d.price.toLocaleString()} {t('som')}</div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </section>
           ))}

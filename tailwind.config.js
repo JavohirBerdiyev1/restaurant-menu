@@ -9,9 +9,15 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)"],
+        forum: ['"Forum"', 'serif'],
+        dm: ['"DM Sans"', 'serif'],
+      },
+      backgroundImage: {
+        'menu-pattern': "url('/images/bg-menu.png')",
       },
       colors: {
-        base: '#273546',
+        base: '#252f3a',
+        // , #273546
         card: '#324A5F',
         accent: '#FFA726',
         'accent-alt': '#3DD5B0',

@@ -5,10 +5,28 @@ import { useTranslation } from 'react-i18next'
 import CategorySidebar from '@/components/CatalogSidebar'
 import Header from '@/components/Header'
 
-const categories = [
-  { id: 'soup',         icon: '🍲', name: { uz: "Sho'rvalar",     ru: 'Супы',          en: 'Soups' } },
-  { id: 'main_course',  icon: '🍛', name: { uz: 'Asosiy taomlar', ru: 'Основные блюда', en: 'Main Courses' } },
-  { id: 'dessert',      icon: '🍰', name: { uz: 'Shirinliklar',   ru: 'Десерты',       en: 'Desserts' } },
+export const categories = [
+ {
+    id: 'soup',
+    icon: '🍲',
+    name: { uz: "Sho'rvalar", ru: 'Супы', en: 'Soups' }
+  },
+ {
+    id: 'main_course',
+    icon: '🍛',
+    name: { uz: 'Asosiy taomlar', ru: 'Основные блюда', en: 'Main Courses' }
+  },
+ {
+    id: 'salad',
+    icon: '🥗',
+    name: { uz: 'Salatlar', ru: 'Салаты', en: 'Salads' }
+  },
+  { id: 'nuts',        icon: '🥜', name: { uz: 'Yongʻoqlar',     ru: 'Орехи',        en: 'Nuts & Snacks' } },
+   {
+    id: 'dessert',
+    icon: '🍰',
+    name: { uz: 'Shirinliklar', ru: 'Десерты', en: 'Desserts' }
+  }
 ]
 
 export default function UzbekPage() {
@@ -65,56 +83,42 @@ export default function UzbekPage() {
             <section
               key={c.id}
               ref={(el) => (catRefs.current[c.id] = el)}
-              className="mb-12 scroll-mt-24"
+              className="mb-6 scroll-mt-24"
             >
-              <h2 className="flex items-center gap-3 text-2xl font-semibold mb-4 text-white">
-                <span className="text-3xl">{c.icon}</span>
+              <h2 className="flex items-center font-forum leading-3  gap-3 text-2xl font-semi mb-4 text-white">
+                <span className="text-3xl ">{c.icon}</span>
                 {c.name[lang]}
               </h2>
 
-              <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-6">
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
                 {(uzbekDishes[c.id] || []).map((d) => {
                   const isFav = favs.includes(d.id)
                   return (
                     <div
-                      key={d.id}
-                      className="bg-card rounded-xl shadow-card hover:shadow-elev transition"
-                    >
-                      {/* IMAGE – padding yo‘q */}
-                      <div className="relative mb-3">
-                        <img
-                          srcSet=""
-                          src={d.image}
-                          alt={d.name[lang]}
-                          className="w-full h-40 object-cover rounded-t-xl"
-                        />
-                        <button
-                          onClick={() => toggleFav(d.id)}
-                          className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-elev"
-                          aria-label="Favorite"
-                        >
-                          <Heart
-                            className={`w-5 h-5 ${
-                              isFav
-                                ? 'text-accent-alt fill-accent-alt'
-                                : 'text-text-subtle'
-                            }`}
-                          />
-                        </button>
-                      </div>
-
-                      <div className="px-4 pb-4">
-                        <h3 className="text-lg font-semibold truncate text-white">
-                          {d.name[lang]}
-                        </h3>
-                        <p className="text-sm text-text-muted line-clamp-2">
-                          {d.description[lang]}
-                        </p>
-                        <div className="mt-2 font-bold text-accent">
-                          {d.price.toLocaleString()} {t('som')}
-                        </div>
+                    key={d.id}
+                    className="rounded-xl border border-white/10 overflow-hidden transition"
+                  >
+                    {/* IMAGE */}
+                    <div className="relative">
+                      <img
+                        srcSet=""
+                        src={d.image}
+                        alt={d.name[lang]}
+                        className="w-full h-[180px] object-cover"
+                      />
+                    </div>
+                    <div className="p-2 text-center">
+                      <h3 className="text-[18px] font-forum tracking-[0.8px] font-medium truncate text-white">
+                        {d.name[lang]}
+                      </h3>
+                      <p className="text-[12px] font-dm text-text-muted line-clamp-2">
+                        {d.description[lang]}
+                      </p>
+                      <div className="mt-2 font-forum text-[16px] font-normal text-accent">
+                        {d?.price?.toLocaleString()} {t('som')}
                       </div>
                     </div>
+                  </div>
                   )
                 })}
               </div>
