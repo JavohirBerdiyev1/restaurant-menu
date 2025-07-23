@@ -37,7 +37,7 @@ export default function BreadPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black font-sans">
+    <div className="min-h-screen bg-base font-sans">
       <Header lang={lang} setLang={i18n.changeLanguage} currentPage="bread" />
 
       <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">

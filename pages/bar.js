@@ -83,7 +83,7 @@ export default function BarPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black font-sans">
+    <div className="min-h-screen bg-base font-sans">
       <Header lang={lang} setLang={changeLang} currentPage="bar" />
       <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">
         <CategorySidebar

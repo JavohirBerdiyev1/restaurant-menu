@@ -253,7 +253,7 @@ export const europeanDishes = {
         ru: "Ассорти из свежих овощей и зелени",
         en: "Fresh vegetable platter"
       },
-      image: "/food/ассорти_из_свежих_овощей_и_зелени_3..jpg",
+      image: "/food/ассорти.jpg",
       price: 0,
       description: {
         uz: "",
@@ -534,7 +534,7 @@ export const europeanDishes = {
     },
     {
       name: { uz: "Steyk Minyon", ru: "стейк миньон", en: "Steak Mignon" },
-      image: "/food/стейк миньон (2)..jpg",
+      image: "/food/стейк.jpg",
       price: 0,
       description: {
         uz: "Bon file, kartoshka, qo‘ziqorin, ismaloq, salat bargi, sariyog‘, pishloq sousi",
