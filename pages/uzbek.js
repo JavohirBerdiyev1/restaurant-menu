@@ -122,9 +122,9 @@ export default function UzbekPage() {
                       <h3 className="text-[14px] font-forum tracking-[0.8px] font-medium  text-white">
                         {d.name[lang]}
                       </h3>
-                      <p className="text-[10px] font-dm text-text-muted line-clamp-2">
+                      {/* <p className="text-[10px] font-dm text-text-muted line-clamp-2">
                         {d.description[lang]}
-                      </p>
+                      </p> */}
                       <div className="mt-2 font-forum text-[16px] font-normal text-accent">
                         {d?.price?.toLocaleString()} {t('som')}
                       </div>

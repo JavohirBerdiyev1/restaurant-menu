@@ -113,9 +113,9 @@ export default function EuropeanPage() {
                         <h3 className="text-[18px] font-forum truncate text-white">
                           {d.name[lang]}
                         </h3>
-                        <p className="text-[12px] text-text-muted line-clamp-2">
+                        {/* <p className="text-[12px] text-text-muted line-clamp-2">
                           {d.description[lang]}
-                        </p>
+                        </p> */}
                         <div className="mt-2 font-forum text-accent">
                           {d?.price?.toLocaleString()} {t("som")}
                         </div>
