@@ -1,7 +1,6 @@
 // components/CategorySidebar.js
 
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react"; // <-- QO'SHING
 
 export default function CategorySidebar({
   categories,
@@ -9,11 +8,6 @@ export default function CategorySidebar({
   onCategoryClick,
   lang,
 }) {
-  const [isClient, setIsClient] = useState(false); // <-- QO'SHING
-
-  useEffect(() => { // <-- QO'SHING
-    setIsClient(true);
-  }, []);
 
   return (
     <aside className="sticky top-20 h-[calc(100vh-80px)] w-60 border-x border-white/10 pl-6 pr-6">
@@ -38,7 +32,7 @@ export default function CategorySidebar({
                   after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
                   ${activeCat === c.id ? 'after:bg-[#e0d3a3]' : 'after:bg-transparent'} text-[14px]`}
               >
-                {isClient && c.name[lang]} {/* <-- O'ZGARTIRING */}
+                {c.name[lang]}
               </span>
             </span>
           </button>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+
 
 const menuCategories = [
   { id: "uzbek",    name: { uz: "Milliy taomlar",  ru: "Узбекская",   en: "Uzbek"    } },
@@ -22,16 +22,11 @@ export default function Header({ lang, setLang, currentPage }) {
     i18n.changeLanguage(v);
   };
 
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-transparent">
-      <div className={`h-0px w-full ${grayLine}`} />
-      <div className="flex items-center justify-between px-10 gap-8 py-4 sticky  bg-base shadow-elev">
+      <div className={`h-px w-full ${grayLine}`} />
+      <div className="flex items-center justify-between px-10 gap-8 py-4 bg-base shadow-elev">
         {/* MENU */}
         <nav className="flex gap-0">
           {menuCategories.map((m, idx) => (
@@ -52,7 +47,7 @@ export default function Header({ lang, setLang, currentPage }) {
                   }
                 `}
               >
-                {isClient && m.name[lang]}
+                {m.name[lang]}
               </Link>
               {idx < menuCategories.length - 1 && (
                 <span className="mx-6 inline-block w-2 h-2 border border-[#e0d3a3] rotate-45" />
