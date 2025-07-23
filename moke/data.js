@@ -959,165 +959,311 @@ export const uzbekDishes = {
     }
   ],
 };
+/* --- shashlikItems.js (yangilangan) --- */
+/* --- shashlikItems.js (16 ta asosiy pozitsiya) --- */
 export const shashlikItems = {
   shashlik: [
     {
-      id: 'lamb_shashlik',
+      id: 'chunk_beef',
       name: {
-        uz: "Qo'y shashlik",
-        ru: "Шашлык из баранины",
-        en: "Lamb Shashlik",
+        uz: "Mol bo‘lak shashlik",
+        ru: "Кусковая говядина",
+        en: "Chunk Beef Shashlik",
       },
-      price: 65000,
       description: {
-        uz: "Marinovka qilingan qo'y go'shti, ko'mirda qovurilgan",
-        ru: "Маринованная баранина, жаренная на углях",
-        en: "Marinated lamb grilled over coals",
+        uz: "Mol go‘shti bo‘laklari, ziravorli marinad, ko‘mirda pishirilgan",
+        ru: "Кусочки говядины в маринаде, жаренные на углях",
+        en: "Marinated beef chunks, charcoal‑grilled",
       },
+      price: 30000,
     },
     {
-      id: 'beef_shashlik',
+      id: 'chunk_lamb',
       name: {
-        uz: "Mol shashlik",
-        ru: "Шашлык из говядины",
-        en: "Beef Shashlik",
+        uz: "Qo‘y bo‘lak shashlik",
+        ru: "Кусковая баранина",
+        en: "Chunk Lamb Shashlik",
       },
-      price: 60000,
       description: {
-        uz: "Mol go'shti, ziravorlar va piyoz bilan",
-        ru: "Говядина с луком и специями",
-        en: "Beef with onions and spices",
+        uz: "Marinovka qilingan qo‘y go‘shti bo‘laklari",
+        ru: "Маринованные кусочки баранины",
+        en: "Marinated lamb chunks",
       },
+      price: 28000,
     },
     {
-      id: 'chicken_shashlik',
+      id: 'minced',
       name: {
-        uz: "Tovuq shashlik",
-        ru: "Шашлык из курицы",
-        en: "Chicken Shashlik",
+        uz: "Qiymalangan shashlik",
+        ru: "Молотый",
+        en: "Minced Shashlik",
       },
-      price: 48000,
       description: {
-        uz: "Tovuq filesi, sirka va o'simlik yog'i marinovkasi",
-        ru: "Куриное филе в уксусно‑масляном маринаде",
-        en: "Chicken fillet in vinegar‑oil marinade",
+        uz: "Mol go‘shti qiymasi, ziravorlar bilan",
+        ru: "Фарш из говядины со специями",
+        en: "Seasoned minced beef skewer",
       },
+      price: 22000,
     },
     {
-      id: 'liver_shashlik',
+      id: 'napoleon',
       name: {
-        uz: "Jigar shashlik",
-        ru: "Шашлык из печени",
-        en: "Liver Shashlik",
+        uz: "Napoleon shashlik",
+        ru: "Наполеон",
+        en: "Napoleon Shashlik",
+      },
+      description: {
+        uz: "Gusht va piyoz qatlamlari bilan shashlik",
+        ru: "Шашлык слоями мяса и лука",
+        en: "Layered meat‑and‑onion skewer",
+      },
+      price: 30000,
+    },
+    {
+      id: 'rulet',
+      name: {
+        uz: "Rulet shashlik",
+        ru: "Рулет",
+        en: "Roll Shashlik",
+      },
+      description: {
+        uz: "Go‘sht rulon, ichiga ziravorlar",
+        ru: "Рулет из мяса со специями",
+        en: "Rolled meat skewer with spices",
+      },
+      price: 30000,
+    },
+    {
+      id: 'lamb_loin',
+      name: {
+        uz: "Qo‘y qovurg‘a shashlik",
+        ru: "Корейка баранина",
+        en: "Lamb Loin Shashlik",
+      },
+      description: {
+        uz: "Qo‘y qovurg‘asi, ko‘mirda qovurilgan",
+        ru: "Баранья корейка на углях",
+        en: "Grilled lamb loin",
       },
       price: 45000,
+    },
+    {
+      id: 'semichka',
+      name: {
+        uz: "Semichka shashlik",
+        ru: "Семичка",
+        en: "Semichka Shashlik",
+      },
       description: {
-        uz: "Qo'y jigariga yog'li quyruq aralashtirilgan",
+        uz: "Yengil marinadda maxsus kesim",
+        ru: "Специальный разрез, лёгкий маринад",
+        en: "Special‑cut skewer in light marinade",
+      },
+      price: 28000,
+    },
+    {
+      id: 'uch_pachka',
+      name: {
+        uz: "Uch pachka shashlik",
+        ru: "Уч пачка",
+        en: "Uch Pachka Shashlik",
+      },
+      description: {
+        uz: "Katta porsiya, uch dona bo‘lak",
+        ru: "Большая порция из трёх кусочков",
+        en: "Large portion of three big chunks",
+      },
+      price: 52000,
+    },
+    {
+      id: 'liver',
+      name: {
+        uz: "Jigar shashlik",
+        ru: "Печень",
+        en: "Liver Shashlik",
+      },
+      description: {
+        uz: "Qo‘y jigari, yog‘li quyruq bilan",
         ru: "Баранья печень с курдючным жиром",
         en: "Lamb liver with tail fat",
       },
+      price: 24000,
     },
     {
-      id: 'veg_shashlik',
+      id: 'kurdjuk',
       name: {
-        uz: "Sabzavot shashlik",
-        ru: "Овощной шашлык",
-        en: "Vegetable Shashlik",
+        uz: "Qurdok shashlik",
+        ru: "Курдюк",
+        en: "Tail‑Fat Shashlik",
       },
-      price: 35000,
       description: {
-        uz: "Pomidor, bulg'or qalampiri, qovoq, piyoz",
-        ru: "Помидоры, перец, кабачки, лук",
-        en: "Tomatoes, bell pepper, zucchini, onion",
+        uz: "Qo‘y yog‘li quyruq bo‘laklari",
+        ru: "Кусочки курдючного жира",
+        en: "Chunks of lamb tail fat",
       },
+      price: 26000,
     },
     {
-      id: 'fish_shashlik',
+      id: 'dollar',
       name: {
-        uz: "Baliq shashlik",
-        ru: "Рыбный шашлык",
-        en: "Fish Shashlik",
+        uz: "Dollar shashlik",
+        ru: "Доллар",
+        en: "Dollar Shashlik",
       },
-      price: 70000,
       description: {
-        uz: "Losos bo'laklari, limon va ko'katlar bilan",
-        ru: "Кусочки лосося с лимоном и зеленью",
-        en: "Salmon pieces with lemon and herbs",
+        uz: "Mayda yumaloq bo‘laklar shaklida",
+        ru: "Небольшие круглые кусочки",
+        en: "Small coin‑shaped pieces",
       },
+      price: 40000,
+    },
+    {
+      id: 'grilled_tomato',
+      name: {
+        uz: "Mangalda pomidor",
+        ru: "Помидоры на мангале",
+        en: "Grilled Tomatoes",
+      },
+      description: {
+        uz: "Yangi pomidorlar mangalda pishirilgan",
+        ru: "Свежие томаты, запечённые на мангале",
+        en: "Fresh tomatoes grilled over charcoal",
+      },
+      price: 18000,
+    },
+    {
+      id: 'chicken_wings',
+      name: {
+        uz: "Tovuq qanotlari",
+        ru: "Крылышки",
+        en: "Chicken Wings",
+      },
+      description: {
+        uz: "Qanotlar maxsus sous va ziravorlarda",
+        ru: "Крылья в фирменном маринаде",
+        en: "Wings in house marinade",
+      },
+      price: 23000,
+    },
+    {
+      id: 'chicken_breast',
+      name: {
+        uz: "Tovuq ko‘krak shashlik",
+        ru: "Куриная грудка",
+        en: "Chicken Breast Shashlik",
+      },
+      description: {
+        uz: "Marinovka qilingan ko‘krak go‘shti",
+        ru: "Маринованная куриная грудка",
+        en: "Marinated chicken breast",
+      },
+      price: 23000,
+    },
+    {
+      id: 'mushrooms',
+      name: {
+        uz: "Shampinyon shashlik",
+        ru: "Шампиньоны",
+        en: "Mushroom Shashlik",
+      },
+      description: {
+        uz: "Butun shampinyonlar, sariyog‘ va ziravorlarda",
+        ru: "Целые шампиньоны со специями",
+        en: "Whole mushrooms with butter & spices",
+      },
+      price: 30000,
+    },
+    {
+      id: 'vegetables',
+      name: {
+        uz: "Aralash sabzavot",
+        ru: "Овощи",
+        en: "Mixed Vegetables",
+      },
+      description: {
+        uz: "Pomidor, bulg‘or qalampiri, piyoz, kabachki",
+        ru: "Перец, помидоры, лук, кабачки",
+        en: "Pepper, tomato, onion, zucchini",
+      },
+      price: 20000,
+    },
+    {
+      id: 'potato',
+      name: {
+        uz: "Kartoshka shashlik",
+        ru: "Картошка",
+        en: "Potato Shashlik",
+      },
+      description: {
+        uz: "Butun kartoshka, ziravorli yog‘ bilan",
+        ru: "Целый картофель со специями и маслом",
+        en: "Whole potato with spiced butter",
+      },
+      price: 15000,
     },
   ],
 };
+
+
+/* --- breadItems.js (yangilangan) --- */
 export const breadItems = {
   bread: [
     {
-      id: 'tandir_plain',
+      id: 'lepeshka',
       name: {
-        uz: 'Tandir non',
-        ru: 'Тандирный хлеб',
-        en: 'Tandir Bread',
+        uz: 'Lepyoshka non',
+        ru: 'Хлеб «Лепёшка»',
+        en: 'Lepyoshka Bread',
       },
-      price: 15000,
       description: {
-        uz: 'An’anaviy tandirda pishirilgan oddiy non',
-        ru: 'Традиционный хлеб, выпеченный в тандыре',
-        en: 'Traditional clay‑oven flatbread',
+        uz: 'An’anaviy tandirda pishirilgan to‘liq lepyoshka',
+        ru: 'Традиционная круглая лепёшка из тандыра',
+        en: 'Whole traditional tandir lepyoshka',
       },
+      price: 7500,
     },
     {
-      id: 'tandir_butter',
+      id: 'lepeshka_half',
       name: {
-        uz: 'Saryogʻli tandir non',
-        ru: 'Тандирный хлеб с маслом',
-        en: 'Butter Tandir Bread',
+        uz: 'Lepyoshka non (½)',
+        ru: 'Хлеб «Лепёшка» 0.5',
+        en: 'Half Lepyoshka',
       },
-      price: 18000,
       description: {
-        uz: 'Tandir noni ustiga saryogʻ surtib pishirilgan',
-        ru: 'Тандирный хлеб, смазанный маслом',
-        en: 'Tandir bread brushed with butter',
+        uz: 'Yarim o‘lchamli lepyoshka',
+        ru: 'Половинная лепёшка',
+        en: 'Half‑size lepyoshka',
       },
+      price: 4000,
     },
     {
-      id: 'patir',
+      id: 'bread_assortment',
       name: {
-        uz: 'Patir non',
-        ru: 'Патыр',
-        en: 'Patir Bread',
+        uz: 'Non assorti',
+        ru: 'Хлебное ассорти',
+        en: 'Bread Assortment',
       },
-      price: 20000,
       description: {
-        uz: 'Qat‑qat yogʻli qatlamli non',
-        ru: 'Слоёный масляный хлеб',
-        en: 'Layered butter bread',
+        uz: 'Turli xildagi nonlardan tanlov',
+        ru: 'Набор различных видов хлеба',
+        en: 'Selection of assorted breads',
       },
+      price: 30000,
     },
     {
-      id: 'kulcha',
+      id: 'black_bread',
       name: {
-        uz: 'Kulcha',
-        ru: 'Кулча',
-        en: 'Kulcha',
+        uz: 'Qora non',
+        ru: 'Хлеб «Чёрный»',
+        en: 'Black Bread',
       },
-      price: 12000,
       description: {
-        uz: 'Kichik yumaloq non',
-        ru: 'Небольшой круглый хлеб',
-        en: 'Small round bread',
+        uz: 'Rye unidan tayyorlangan qora non',
+        ru: 'Тёмный ржаной хлеб',
+        en: 'Dark rye bread',
       },
-    },
-    {
-      id: 'lavash',
-      name: {
-        uz: 'Lavash',
-        ru: 'Лаваш',
-        en: 'Lavash',
-      },
-      price: 10000,
-      description: {
-        uz: 'Yupqa yopilgan non',
-        ru: 'Тонкая лепёшка',
-        en: 'Thin flatbread',
-      },
+      price: 19000,
     },
   ],
 };
+

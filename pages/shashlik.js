@@ -66,20 +66,20 @@ export default function ShashlikPage() {
             ref={(el) => (catRefs.current.shashlik = el)}
             className="mb-12 scroll-mt-24"
           >
-            <h2 className="flex items-center gap-3 text-2xl font-semibold mb-6 text-white">
-              <span className="text-3xl">🍢</span>
+            <h2 className="flex items-center gap-3 text-xl font-semibold mb-6 text-white">
+              <span className="text-2xl">🍢</span>
               {categories[0].name[lang]}
             </h2>
 
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
               {shashlikItems.shashlik.map((d) => (
                 <div key={d.id} className="flex flex-col">
                   <div className="flex items-baseline mb-1 text-[#E0E0E0]">
-                    <h3 className="text-lg tracking-wider uppercase whitespace-nowrap">
+                    <h3 className="text-sm tracking-wider uppercase whitespace-nowrap">
                       {getText(d.name, lang)}
                     </h3>
                     <div className="flex-grow h-px border-b-2 border-double border-[#a37e2c] mx-4" />
-                    <p className="text-lg whitespace-nowrap">
+                    <p className="text-sm whitespace-nowrap">
                       {d.price.toLocaleString()} {t('som')}
                     </p>
                   </div>

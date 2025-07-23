@@ -3,44 +3,29 @@ export const hookahItems = {
     {
       id: 'classic_hookah',
       name: {
-        uz: "Klassik kal'yan",
-        ru: "Классический кальян",
-        en: "Classic Hookah",
+        uz: "Classic",
+        ru: "Classic",
+        en: "Classic",
       },
-      price: 80000,
-      description: {
-        uz: "Oddiy tamaki aralashmasi",
-        ru: "Классический табачный микс",
-        en: "Traditional tobacco blend",
-      },
+      price: 150000,
     },
     {
       id: 'premium_hookah',
       name: {
-        uz: "Premium kal'yan",
-        ru: "Премиум кальян",
-        en: "Premium Hookah",
+        uz: "Premium",
+        ru: "Premium",
+        en: "Premium",
       },
-      price: 120000,
-      description: {
-        uz: "Yuqa va mazali premium tamaki",
-        ru: "Премиальный табак высокого качества",
-        en: "High‑grade premium tobacco",
-      },
+      price: 180000,
     },
     {
       id: 'fruit_bowl_hookah',
       name: {
-        uz: "Mevali kosali kal'yan",
+        uz: "Mevali chasha",
         ru: "Фруктовая чаша",
         en: "Fruit Bowl Hookah",
       },
-      price: 150000,
-      description: {
-        uz: "Yangi mevalar kosasida tamaki",
-        ru: "Табак в чаше из свежих фруктов",
-        en: "Tobacco packed in a fresh fruit bowl",
-      },
+      price: 250000,
     },
     {
       id: 'signature_hookah',
@@ -49,12 +34,7 @@ export const hookahItems = {
         ru: "Авторский кальян",
         en: "Signature Hookah",
       },
-      price: 180000,
-      description: {
-        uz: "Barmenning maxsus retsepti",
-        ru: "Фирменный рецепт мастера",
-        en: "Master’s signature recipe",
-      },
+      price: 300000,
     },
   ],
 };

@@ -83,9 +83,9 @@ export default function BarPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-base font-sans">
+    <div className="min-h-screen w-full bg-base font-sans">
       <Header lang={lang} setLang={changeLang} currentPage="bar" />
-      <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">
+      <div className="flex  mx-auto mt-6 px-4 gap-6">
         <CategorySidebar
           categories={categories}
           activeCat={activeCat}
@@ -115,21 +115,21 @@ export default function BarPage() {
               ref={(el) => (catRefs.current[c.id] = el)}
               className="mb-12 scroll-mt-24"
             >
-              <h2 className="flex items-center gap-3 text-2xl font-semibold mb-6 text-white">
+              <h2 className="flex items-center gap-3 text-xl font-semibold mb-6 text-white">
                 <span className="text-3xl">{c.icon}</span>
                 {c.name[lang]}
               </h2>
 
-              <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
                 {(barItems[c.id] || []).map((d) => (
                   <div key={d.id} className="flex flex-col">
                     {/* nom va narx */}
                     <div className="flex items-baseline mb-1 text-[#E0E0E0]">
-                      <h3 className="text-lg tracking-wider uppercase whitespace-nowrap">
+                      <h3 className="text-sm tracking-wider uppercase whitespace-nowrap">
                         {getText(d.name)}
                       </h3>
                       <div className="flex-grow h-px border-b-2 border-double border-[#a37e2c] mx-4" />
-                      <p className="text-lg whitespace-nowrap">
+                      <p className="text-sm whitespace-nowrap">
                         {d.price ? d.price.toLocaleString() : "-"} {t("som")}
                       </p>
                     </div>

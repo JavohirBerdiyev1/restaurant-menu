@@ -96,8 +96,8 @@ export default function UzbekPage() {
               ref={(el) => (catRefs.current[c.id] = el)}
               className="mb-6 scroll-mt-24"
             >
-              <h2 className="flex items-center font-forum leading-3  gap-3 text-2xl font-semi mb-4 text-white">
-                <span className="text-3xl ">{c.icon}</span>
+              <h2 className="flex items-center font-forum leading-3  gap-3 text-xl font-semi mb-4 text-white">
+                <span className="text-2xl ">{c.icon}</span>
                 {c.name[lang]}
               </h2>
 
@@ -119,10 +119,10 @@ export default function UzbekPage() {
                       />
                     </div>
                     <div className="p-2 text-center">
-                      <h3 className="text-[18px] font-forum tracking-[0.8px] font-medium truncate text-white">
+                      <h3 className="text-[14px] font-forum tracking-[0.8px] font-medium  text-white">
                         {d.name[lang]}
                       </h3>
-                      <p className="text-[12px] font-dm text-text-muted line-clamp-2">
+                      <p className="text-[10px] font-dm text-text-muted line-clamp-2">
                         {d.description[lang]}
                       </p>
                       <div className="mt-2 font-forum text-[16px] font-normal text-accent">

@@ -21,7 +21,7 @@ export default function Header({ lang, setLang, currentPage }) {
     i18n.changeLanguage(v);
   };
   return (
-    <header className="sticky top-0 z-50 bg-transparent">
+    <header className="sticky top-[-1px] z-50 bg-transparent">
       <div className={`h-px w-full ${grayLine}`} />
       <div className="flex items-center justify-between px-10 gap-8 py-4 bg-base shadow-elev">
         {/* MENU */}

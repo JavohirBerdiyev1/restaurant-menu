@@ -1,7 +1,4 @@
-// components/CategorySidebar.js
-
-import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react"; // <-- QO'SHING
+import { useState, useEffect } from "react";
 
 export default function CategorySidebar({
   categories,
@@ -9,15 +6,16 @@ export default function CategorySidebar({
   onCategoryClick,
   lang,
 }) {
-  const [isClient, setIsClient] = useState(false); // <-- QO'SHING
+  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => { // <-- QO'SHING
+  useEffect(() => {
     setIsClient(true);
   }, []);
 
   return (
-    <aside className="sticky top-20 h-[calc(100vh-80px)] w-60 border-x border-white/10 pl-6 pr-6">
-      {/* ... boshqa kodlar ... */}
+    // highlight-start
+    <aside className="sticky top-20 h-[calc(100vh-80px)] w-60 overflow-y-auto border-x border-white/10 pl-6 pr-6">
+    {/* highlight-end */}
       <div className="mb-8">
         <img src="/logo-2.png" alt="Logo" className="w-full object-contain" />
       </div>
@@ -38,7 +36,7 @@ export default function CategorySidebar({
                   after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
                   ${activeCat === c.id ? 'after:bg-[#e0d3a3]' : 'after:bg-transparent'} text-[14px]`}
               >
-                {isClient && c.name[lang]} {/* <-- O'ZGARTIRING */}
+                {isClient && c.name[lang]}
               </span>
             </span>
           </button>
