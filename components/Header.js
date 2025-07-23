@@ -30,10 +30,10 @@ export default function Header({ lang, setLang, currentPage }) {
 
   return (
     <header className="sticky top-0 z-50 bg-transparent">
-      <div className={`h-px w-full ${grayLine}`} />
+      <div className={`h-0px w-full ${grayLine}`} />
       <div className="flex items-center justify-between px-10 gap-8 py-4 sticky  bg-base shadow-elev">
         {/* MENU */}
-        <nav className="flex gap-8">
+        <nav className="flex gap-0">
           {menuCategories.map((m, idx) => (
             <div key={m.id} className="flex items-center">
               <Link
