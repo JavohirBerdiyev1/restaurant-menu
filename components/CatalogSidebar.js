@@ -19,7 +19,7 @@ export default function CategorySidebar({
     <aside className="sticky top-20 h-[calc(100vh-80px)] w-60 border-x border-white/10 pl-6 pr-6">
       {/* ... boshqa kodlar ... */}
       <div className="mb-8">
-        <img src="/logo.png" alt="Logo" className="w-full object-contain" />
+        <img src="/logo-2.png" alt="Logo" className="w-full object-contain" />
       </div>
 
       <nav className="flex flex-col gap-4">
