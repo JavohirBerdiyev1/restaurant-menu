@@ -1,46 +1,55 @@
 import { useState, useRef, useEffect } from 'react'
 import { uzbekDishes } from '@/moke/data'
-import { Heart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import CategorySidebar from '@/components/CatalogSidebar'
 import Header from '@/components/Header'
 
 export const categories = [
- {
-    id: 'soup',
-    icon: '🍲',
-    name: { uz: "Sho'rvalar", ru: 'Супы', en: 'Soups' }
+  {
+    id: 'cold_appetizer',
+    icon: '🥒',
+    name: {
+      uz: 'Sovuq zakuskalar',
+      ru: 'Холодные закуски',
+      en: 'Cold Appetizers',
+    },
   },
- {
-    id: 'main_course',
-    icon: '🍛',
-    name: { uz: 'Asosiy taomlar', ru: 'Основные блюда', en: 'Main Courses' }
-  },
- {
+  {
     id: 'salad',
     icon: '🥗',
-    name: { uz: 'Salatlar', ru: 'Салаты', en: 'Salads' }
+    name: { uz: 'Salatlar', ru: 'Салаты', en: 'Salads' },
   },
-  { id: 'nuts',        icon: '🥜', name: { uz: 'Yongʻoqlar',     ru: 'Орехи',        en: 'Nuts & Snacks' } },
-   {
-    id: 'dessert',
-    icon: '🍰',
-    name: { uz: 'Shirinliklar', ru: 'Десерты', en: 'Desserts' }
-  }
-]
+  {
+    id: 'first_course',
+    icon: '🍲',
+    name: {
+      uz: 'Birinchi taomlar',
+      ru: 'Первые блюда',
+      en: 'Soups & First Courses',
+    },
+  },
+  {
+    id: 'second_course',
+    icon: '🍛',
+    name: {
+      uz: 'Ikkinchi taomlar',
+      ru: 'Вторые блюда',
+      en: 'Main Courses',
+    },
+  },
+];
 
 export default function UzbekPage() {
   const { i18n, t } = useTranslation()
-  const [lang, setLang] = useState('uz')
+  const lang = i18n.language
   const [activeCat, setActiveCat] = useState('soup')
   const [favs, setFavs] = useState([])
   const catRefs = useRef({})
 
   const changeLang = (l) => {
     i18n.changeLanguage(l)
-    setLang(l)
   }
-
+  
   const toggleFav = (id) => {
     setFavs((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]))
   }
@@ -59,6 +68,8 @@ export default function UzbekPage() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  
 
   return (
     <div className="min-h-screen bg-base font-sans">

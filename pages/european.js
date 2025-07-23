@@ -1,55 +1,65 @@
-import { useState, useRef, useEffect } from 'react'
-import { europeanDishes, categories as catMap } from '@/moke/data'
-import { Heart } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
-import CategorySidebar from '@/components/CatalogSidebar'
-import Header from '@/components/Header'
+import { useState, useRef, useEffect } from "react";
+import { europeanDishes, categories as catMap } from "@/moke/data";
+import { Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import CategorySidebar from "@/components/CatalogSidebar";
+import Header from "@/components/Header";
 
 export default function EuropeanPage() {
-  const { i18n, t } = useTranslation()
-  const [lang, setLang] = useState('uz')
-  const [activeCat, setActiveCat] = useState('soup')
-  const [favs, setFavs] = useState([])
-  const catRefs = useRef({})
+  const { i18n, t } = useTranslation();
+  // const [lang, setLang] = useState("uz");
+  const [activeCat, setActiveCat] = useState("soup");
+  const [favs, setFavs] = useState([]);
+  const catRefs = useRef({});
 
   // JSON‑dagi kategoriyalarni avtomatik olish
-const categories = [
-    { id: 'main_course', icon: '🍛', name: { uz: 'Asosiy taomlar', ru: 'Основные блюда', en: 'Main Courses' } },
-    { id: 'grill',       icon: '🔥', name: { uz: 'Gril',           ru: 'Гриль',        en: 'Grill' } },
-    { id: 'seafood',     icon: '🦐', name: { uz: 'Dengiz taomlari',ru: 'Морепродукты', en: 'Seafood' } },
-    { id: 'nuts',        icon: '🥜', name: { uz: 'Yongʻoqlar',     ru: 'Орехи',        en: 'Nuts & Snacks' } },
-    // salad
-    {
-      id: 'salad',
-      icon: '🥗',
-      name: { uz: 'Salatlar', ru: 'Салаты', en: 'Salads' }
-    },
-    { id: 'dessert',     icon: '🍰', name: { uz: 'Shirinliklar',   ru: 'Десерты',       en: 'Desserts' } }
-  ]
+  const categories = [
+      {
+        id: 'cold_appetizer',
+        icon: '🥒',
+        name: { uz: 'Sovuq zakuskalar', ru: 'Холодные закуски', en: 'Cold Appetizers' },
+      },
+      {
+        id: 'nuts',
+        icon: '🥜',
+        name: { uz: 'ГОРЯЧИЙ ЗАКУСКИ', ru: 'ГОРЯЧИЙ ЗАКУСКИ', en: 'ГОРЯЧИЙ ЗАКУСКИ' },
+      },
+      {
+        id: 'salad',
+        icon: '🥗',
+        name: { uz: 'Salatlar', ru: 'Салаты', en: 'Salads' },
+      },
+      {
+        id: 'second_course',
+        icon: '🍛',
+        name: { uz: 'Ikkinchi taomlar', ru: 'Вторые блюда', en: 'Main Courses' },
+      },
+     
+  ];
+
   
-  
+  const lang = i18n.language
   const changeLang = (l) => {
-    i18n.changeLanguage(l)
-    setLang(l)
-  }
+    i18n.changeLanguage(l);
+  };
 
   const toggleFav = (id) =>
-    setFavs((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]))
+    setFavs((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
 
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY + 180
+      const y = window.scrollY + 180;
       for (const c of Object.keys(catRefs.current)) {
-        const el = catRefs.current[c]
+        const el = catRefs.current[c];
         if (el && y >= el.offsetTop && y < el.offsetTop + el.offsetHeight) {
-          setActiveCat(c)
-          break
+          setActiveCat(c);
+          break;
         }
       }
-    }
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-base font-sans">
@@ -60,8 +70,11 @@ const categories = [
           categories={categories}
           activeCat={activeCat}
           onCategoryClick={(id) => {
-            setActiveCat(id)
-            catRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            setActiveCat(id);
+            catRefs.current[id]?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
           }}
           lang={lang}
         />
@@ -80,7 +93,7 @@ const categories = [
 
               <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
                 {(europeanDishes[c.id] || []).map((d) => {
-                  const isFav = favs.includes(d.id)
+                  const isFav = favs.includes(d.id);
                   return (
                     <div
                       key={d.id}
@@ -93,7 +106,6 @@ const categories = [
                           alt={d.name[lang]}
                           className="w-full h-[180px] object-cover"
                         />
-                      
                       </div>
 
                       {/* text */}
@@ -105,11 +117,11 @@ const categories = [
                           {d.description[lang]}
                         </p>
                         <div className="mt-2 font-forum text-accent">
-                          {d?.price?.toLocaleString()} {t('som')}
+                          {d?.price?.toLocaleString()} {t("som")}
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
             </section>
@@ -117,5 +129,5 @@ const categories = [
         </main>
       </div>
     </div>
-  )
+  );
 }
