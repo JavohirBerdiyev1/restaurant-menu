@@ -7,6 +7,7 @@ const menuCategories = [
   { id: "european", name: { uz: "Yevropa taomlar", ru: "Европейская", en: "European" } },
   { id: "businessLunch", name: { uz: "Biznes-lanch", ru: "Бизнес-ланч", en: "Business Lunch" } },
   { id: "shashlik", name: { uz: "Shashlik",        ru: "Шашлык",      en: "Shashlik" } },
+  { id: "garnish", name: { uz: "Garnirlar", ru: "Гарниры", en: "Garnishes" } },
   { id: "bread",    name: { uz: "Non",             ru: "Хлеб",        en: "Bread"    } },
   { id: "bar",      name: { uz: "Bar",             ru: "Бар",         en: "Bar"      } },
   { id: "hookah",   name: { uz: "Kal'yan",         ru: "Кальян",      en: "Hookah"   } },

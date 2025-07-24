@@ -9,7 +9,7 @@ export const categories = [
     id: 'cold_appetizer',
     icon: '🥒',
     name: {
-      uz: 'Sovuq zakuskalar',
+      uz: 'Gazaklar',
       ru: 'Холодные закуски',
       en: 'Cold Appetizers',
     },

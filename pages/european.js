@@ -87,7 +87,7 @@ export default function EuropeanPage() {
               className="mb-6 scroll-mt-24"
             >
               <h2 className="flex items-center gap-3 text-2xl mb-4 text-white font-forum">
-                <span className="text-3xl">{c.icon}</span>
+                <span className="text-xl">{c.icon}</span>
                 {c.name[lang]}
               </h2>
 
