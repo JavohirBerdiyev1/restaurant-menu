@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 const menuCategories = [
   { id: "uzbek",    name: { uz: "Milliy taomlar",  ru: "Узбекская",   en: "Uzbek"    } },
   { id: "european", name: { uz: "Yevropa taomlar", ru: "Европейская", en: "European" } },
+  { id: "businessLunch", name: { uz: "Biznes-lanch", ru: "Бизнес-ланч", en: "Business Lunch" } },
   { id: "shashlik", name: { uz: "Shashlik",        ru: "Шашлык",      en: "Shashlik" } },
   { id: "bread",    name: { uz: "Non",             ru: "Хлеб",        en: "Bread"    } },
   { id: "bar",      name: { uz: "Bar",             ru: "Бар",         en: "Bar"      } },

@@ -274,7 +274,7 @@ export const europeanDishes = {
     {
       name: {
         uz: "Mevali assorti",
-        ru: "фруктовий ассорти",
+        ru: "Фруктовая тарелка",
         en: "Fruit assortment"
       },
       image: "/food/СезонныеФрукт.jpg",
@@ -286,7 +286,7 @@ export const europeanDishes = {
       }
     },
     {
-      name: { uz: "Yong'oqla", ru: "Oрешки", en: "Nuts" },
+      name: { uz: "Yong'oqlar", ru: "Oрешки", en: "Nuts" },
       image: "/food/соленый орех..jpg",
       price: 42000,
       description: {
@@ -310,7 +310,7 @@ export const europeanDishes = {
 
     {
       id: 132,
-      name: { uz: "Pivo‑Krevetka", ru: "Пивное креветки", en: "Beer Shrimps" },
+      name: { uz: "Pivo‑Krevetka", ru: "Креветки к пиву", en: "Beer Shrimps" },
       image: "/food/пивное креветки (3)..jpg",
       price: 65000,
       description: {
@@ -386,7 +386,7 @@ export const europeanDishes = {
         en: "Crispy Eggplant",
       },
       image: "/food/хрустящие баклажаны..jpg",
-      price: 0,
+      price: 70000,
       description: {
         uz: "Qarsildoq baklajon",
         ru: "Хрустящий баклажан",
@@ -489,7 +489,7 @@ export const europeanDishes = {
     {
       name: { uz: "Steyk Ribay", ru: "Стейк рибай", en: "Rib‑eye Steak" },
       image: "/food/стейк рибай (2)..jpg",
-      price: 92000,
+      price: 180000,
       description: {
         uz: "Rib‑eye, rozmarin",
         ru: "Рибай с розмарином",
@@ -513,7 +513,7 @@ export const europeanDishes = {
         en: "Classic Beef Burger",
       },
       image: "/food/Классический говяжий бургер (3)..jpg",
-      price: 180000,
+      price: 41000,
       description: {
         uz: "Kotleta, sous spayси",
         ru: "Котлета, соус",
@@ -527,7 +527,7 @@ export const europeanDishes = {
         en: "Beef Medallions",
       },
       image: "/food/медальоны из бон филе..jpg",
-      price: 0,
+      price: 165000,
       description: {
         uz: "Mol medalyon, qo‘ziqorin",
         ru: "Говядина с грибами",
@@ -578,11 +578,11 @@ export const europeanDishes = {
       id: 122,
       name: {
         uz: "Mol Kolbasa Gril",
-        ru: "Говяжий колбаски на гриле",
+        ru: "Говяжьи колбаски",
         en: "Beef Sausages",
       },
       image: "/food/говяжий колбаски на гриле..jpg",
-      price: 0,
+      price: 92000,
       description: {
         uz: "Mol kolbasa, karam",
         ru: "Колбаски, капуста",
@@ -667,7 +667,7 @@ export const uzbekDishes = {
   cold_appetizer: [
     {
       id: 1,
-      name: { uz: 'Свежий', ru: 'Свежий', en: 'Fresh Veg Mix' },
+      name: { uz: 'Свежий', ru: 'Свежая нарезка', en: 'Fresh Veg Mix' },
       image: '/food/свежий (2)..jpg',
       price: 28000,
       description: {
@@ -680,7 +680,7 @@ export const uzbekDishes = {
       id: 13,
       name: {
         uz: 'Marinovka pomidorlar',
-        ru: 'Маринованные помидоры',
+        ru: 'Маринованное ассорти',
         en: 'Pickled tomatoes',
       },
       image: '/food/Маринованные помидоры.jpg',
@@ -968,8 +968,6 @@ export const uzbekDishes = {
   ],
 };
 
-/* --- shashlikItems.js (yangilangan) --- */
-/* --- shashlikItems.js (16 ta asosiy pozitsiya) --- */
 export const shashlikItems = {
   shashlik: [
     {
@@ -1002,7 +1000,7 @@ export const shashlikItems = {
     },
     {
       id: 'minced',
-      name: {
+      name: { 
         uz: "Qiymalangan shashlik",
         ru: "Молотый",
         en: "Minced Shashlik",
@@ -1012,7 +1010,7 @@ export const shashlikItems = {
         ru: "Фарш из говядины со специями",
         en: "Seasoned minced beef skewer",
       },
-      price: 22000,
+      price: 25000,
     },
     {
       id: 'napoleon',
@@ -1276,3 +1274,17 @@ export const breadItems = {
   ],
 };
 
+
+export const businessLunchItems = {
+  businessLunch: [
+    {
+      id: 'lunch_standard',
+      name: {
+        uz: 'Biznes-Lanch',
+        ru: 'бизнес-ланч',
+        en: 'Business Lunch',
+      },
+      price: 55000,
+    },
+  ],
+};

@@ -17,12 +17,12 @@ export default function EuropeanPage() {
       {
         id: 'cold_appetizer',
         icon: '🥒',
-        name: { uz: 'Sovuq zakuskalar', ru: 'Холодные закуски', en: 'Cold Appetizers' },
+        name: { uz: 'Gazaklar', ru: 'Холодные закуски', en: 'Cold Appetizers' },
       },
       {
         id: 'nuts',
         icon: '🥜',
-        name: { uz: 'ГОРЯЧИЙ ЗАКУСКИ', ru: 'ГОРЯЧИЙ ЗАКУСКИ', en: 'ГОРЯЧИЙ ЗАКУСКИ' },
+        name: { uz: 'Issiq gazaklar', ru: 'Горячие закуски', en: 'ГОРЯЧИЙ ЗАКУСКИ' },
       },
       {
         id: 'salad',
