@@ -165,7 +165,6 @@ export const barItems = {
     { "id": "alcohol_drinks_13", "name": "Cosmopolitan",     "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_14", "name": "Margarita",        "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_15", "name": "Long Island",      "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "alcohol_drinks_16", "name": "Bloody Mary",      "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_17", "name": "Manhattan",        "unit": "мл", "volume": null, "price": 80000 }
   ],
   "beer": [
@@ -819,6 +818,18 @@ export const uzbekDishes = {
         en: 'Lamb soup',
       },
     },
+    // Okroshka
+    {
+      id: 34,
+      name: { uz: 'Okroshka', ru: 'Окрошка', en: 'Okroshka' },
+      image: '/food/Okroshka.png',
+      price: 32000,
+      description: {
+        uz: 'Qo‘y go‘shti sho‘rvasi',
+        ru: 'Бараний суп',
+        en: 'Lamb soup',
+      },
+    },
     {
       id: 17,
       name: { uz: 'Lag‘mon', ru: 'Лагман', en: 'Lagman' },
@@ -1218,21 +1229,7 @@ export const breadItems = {
         ru: 'Традиционная круглая лепёшка из тандыра',
         en: 'Whole traditional tandir lepyoshka',
       },
-      price: 7500,
-    },
-    {
-      id: 'lepeshka_half',
-      name: {
-        uz: 'Yopgan non 0.5',
-        ru: 'Хлеб «Лепёшка» 0.5',
-        en: 'Bread 0.5',
-      },
-      description: {
-        uz: 'Yarim o‘lchamli lepyoshka',
-        ru: 'Половинная лепёшка',
-        en: 'Half‑size lepyoshka',
-      },
-      price: 4000,
+      price: 6000,
     },
     {
       id: 'bread_assortment',
