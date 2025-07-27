@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Globe } from "lucide-react";
+import { Globe, Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 
 const menuCategories = [
@@ -17,35 +18,49 @@ export default function Header({ lang, setLang, currentPage }) {
   const gold = "text-[#e0d3a3]"; // oltin rang
   const grayLine = "bg-white/10"; // chiziq rangi
 
+  const [open, setOpen] = useState(false);
+
   const change = (v) => {
     setLang(v);
     i18n.changeLanguage(v);
+    setOpen(false);
   };
 
 
   return (
     <header className="sticky top-0 z-50 bg-transparent">
       <div className={`h-px w-full ${grayLine}`} />
-      <div className="flex items-center justify-between px-10 gap-8 py-4 bg-base shadow-elev">
-        {/* MENU */}
-        <nav className="flex gap-0">
+      <div className="flex items-center justify-between px-4 md:px-10 gap-4 py-4 bg-base shadow-elev relative">
+        <button
+          className="md:hidden text-white"
+          onClick={() => setOpen((o) => !o)}
+        >
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
+        <nav
+          className={`${
+            open ? 'flex' : 'hidden'
+          } md:flex flex-col md:flex-row gap-4 md:gap-0 absolute md:static top-full left-0 w-full md:w-auto bg-base md:bg-transparent p-4 md:p-0 shadow-elev md:shadow-none`}
+        >
           {menuCategories.map((m, idx) => (
             <div key={m.id} className="flex items-center">
               <Link
                 href={`/${m.id}`}
-                className={`relative font-forum text-white uppercase tracking-wide text-sm 
+                className={`relative font-forum text-white uppercase tracking-wide text-sm
                   ${
                     m.id === currentPage
                       ? gold
-                      : "text-white hover:text-[#e0d3a3]"
+                      : 'text-white hover:text-[#e0d3a3]'
                   }
                   after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
                   ${
                     m.id === currentPage
-                      ? "after:bg-[#e0d3a3]"
-                      : "after:bg-transparent"
+                      ? 'after:bg-[#e0d3a3]'
+                      : 'after:bg-transparent'
                   }
                 `}
+                onClick={() => setOpen(false)}
               >
                 {m.name[lang]}
               </Link>
@@ -56,8 +71,7 @@ export default function Header({ lang, setLang, currentPage }) {
           ))}
         </nav>
 
-        {/* LANGUAGE SELECT */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ml-auto md:ml-0">
           <Globe className={`${gold} w-4 h-4`} />
           <select
             value={lang}

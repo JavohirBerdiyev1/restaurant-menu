@@ -43,7 +43,7 @@ export default function ShashlikPage() {
   return (
     <div className="min-h-screen bg-base font-sans">
       <Header lang={lang} setLang={i18n.changeLanguage} currentPage="shashlik" />
-      <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto mt-6 px-4 gap-6">
         <CategorySidebar
           categories={categories}
           activeCat={activeCat}
@@ -71,7 +71,7 @@ export default function ShashlikPage() {
               {categories[0].name[lang]}
             </h2>
 
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6">
+            <div className="grid grid-cols-2 sm:grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6">
               {shashlikItems.shashlik.map((d) => (
                 <div key={d.id} className="flex flex-col">
                   <div className="flex items-baseline mb-1 text-[#E0E0E0]">
