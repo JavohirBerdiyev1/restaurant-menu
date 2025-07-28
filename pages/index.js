@@ -48,7 +48,7 @@ export default function IndexPage() {
     <div className="min-h-screen bg-base font-sans text-white">
       <Header lang={lang} setLang={changeLang} currentPage="home" />
 
-   <section className="relative h-[320px] md:h-[600px]">
+   <section className="relative h-[320px] md:h-[400px]">
 
   {/* background */}
   <img
@@ -111,12 +111,11 @@ export default function IndexPage() {
         ))}
       </section>
 
-      <footer className="relative mt-16">
+      {/* <footer className="relative mt-16">
         <div className="relative bg-base text-white">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
 
           <div className="relative max-w-6xl mx-auto px-4 py-4 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {/* brand */}
             <div className="space-y-4">
               <img src="/logo.png" alt="Logo" className="w-36 h-auto rounded-full" />
               <p className="font-forum text-2xl tracking-wide">
@@ -126,7 +125,6 @@ export default function IndexPage() {
                 {t("tagline") || "Mazali taomlar va yoqimli muhit."}
               </p>
 
-              {/* socials */}
               <div className="flex items-center gap-3 pt-2">
                 <a
                   href="https://t.me/"
@@ -191,8 +189,6 @@ export default function IndexPage() {
                 </a>
               </div>
             </div>
-
-            {/* quick links */}
             <div>
               <h4 className="font-semibold mb-4 text-white">
                 {t("quick_links") || "Bo‘limlar"}
@@ -238,7 +234,6 @@ export default function IndexPage() {
               </ul>
             </div>
 
-            {/* contact */}
             <div>
               <h4 className="font-semibold mb-4 text-white">
                 {t("contact") || "Aloqa"}
@@ -264,7 +259,6 @@ export default function IndexPage() {
                     target="_blank"
                     className="inline-flex items-center gap-2 hover:text-[#e0d3a3] transition"
                   >
-                    {/* map pin */}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                       <path
                         d="M12 22s7-5.33 7-12a7 7 0 1 0-14 0c0 6.67 7 12 7 12Z"
@@ -285,7 +279,6 @@ export default function IndexPage() {
               </ul>
             </div>
 
-            {/* hours + language */}
             <div>
               <h4 className="text-white font-semibold mb-4">
                 {t("hours") || "Ish vaqti"}
@@ -317,10 +310,7 @@ export default function IndexPage() {
             </div>
           </div>
 
-          {/* separator */}
           <div className="border-t border-white/10" />
-
-          {/* subfooter */}
           <div className="max-w-6xl mx-auto px-4 py-6 text-xs flex flex-col md:flex-row items-center gap-3 md:gap-6 justify-between text-white/60">
             <p>
               © {new Date().getFullYear()}{" "}
@@ -338,7 +328,7 @@ export default function IndexPage() {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
