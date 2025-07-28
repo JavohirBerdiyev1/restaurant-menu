@@ -120,7 +120,7 @@ export default function BarPage() {
                 {c.name[lang]}
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+              <div className="grid grid-cols-2 sm:grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6">
                 {(barItems[c.id] || []).map((d) => (
                   <div key={d.id} className="flex flex-col">
                     {/* nom va narx */}

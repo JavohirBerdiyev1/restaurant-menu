@@ -133,39 +133,39 @@ export const barItems = {
   "lemonades": [
     { "id": "lemonades_1",  "name": "Sweet Samurai",     "unit": "мл", "volume": 400, "price": 45000 },
     { "id": "lemonades_2",  "name": "Sun Kiss",          "unit": "мл", "volume": 400, "price": 45000 },
-    { "id": "lemonades_3",  "name": "Green Dragon",      "unit": "мл", "volume": 400, "price": 45000 },
+    { "id": "lemonades_3",  "name": "Green Hat",      "unit": "мл", "volume": 400, "price": 45000 },
+    { "id": "lemonades_34",  "name": "Mojito classic",      "unit": "мл", "volume": 400, "price": 45000 },
+    { "id": "lemonades_34",  "name": "Mojito Strawberry",      "unit": "мл", "volume": 400, "price": 50000 },
     { "id": "lemonades_4",  "name": "Passion Fruit",     "unit": "мл", "volume": 400, "price": 45000 },
-    { "id": "lemonades_5",  "name": "Elderflower",       "unit": "мл", "volume": 400, "price": 45000 },
-    { "id": "lemonades_6",  "name": "Mango Collins",     "unit": "мл", "volume": 400, "price": 45000 },
-    { "id": "lemonades_7",  "name": "Grape Basil",       "unit": "мл", "volume": 400, "price": 45000 },
+    { "id": "lemonades_5",  "name": "Classic",       "unit": "л", "volume": 1, "price": 60000 },
+    { "id": "lemonades_6",  "name": "Ice tea",     "unit": "мл", "volume": 1000, "price": 60000 },
+    { "id": "lemonades_7",  "name": "Blueberry ice",       "unit": "мл", "volume": 400, "price": 45000 },
     { "id": "lemonades_8",  "name": "Berry Garden",      "unit": "мл", "volume": 400, "price": 45000 },
-    { "id": "lemonades_9",  "name": "Apple Ginger",      "unit": "мл", "volume": 400, "price": 45000 },
-    { "id": "lemonades_10", "name": "Cucumber Lemon",    "unit": "мл", "volume": 400, "price": 45000 }
+    { "id": "lemonades_9",  "name": "Tarxun Apple",      "unit": "мл", "volume": 1000, "price": 60000 },
   ],
   "smoothies_detox": [
-    { "id": "smoothies_detox_1", "name": "Power Detox",        "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "smoothies_detox_2", "name": "Wonder Detox",       "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "smoothies_detox_3", "name": "Cherry Garden",      "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "smoothies_detox_4", "name": "Японский персик",    "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "smoothies_detox_5", "name": "Sakura Dream",       "unit": "мл", "volume": null, "price": 80000 }
+    { "id": "smoothies_detox_1", "name": "Watermelon Strawberry",        "unit": "мл", "volume": null, "price": 30000 },
+    { "id": "smoothies_detox_2", "name": "Yello energy",       "unit": "мл", "volume": null, "price": 30000 },
+    { "id": "smoothies_detox_3", "name": "Detox green energy",       "unit": "мл", "volume": null, "price": 40000 },
+
+    { "id": "smoothies_detox_3", "name": "Detox wellness complex",       "unit": "мл", "volume": null, "price": 40000 },
+ 
   ],
   "alcohol_drinks": [
     { "id": "alcohol_drinks_1",  "name": "Gin Tonic",        "unit": "мл", "volume": null, "price": 55000 },
     { "id": "alcohol_drinks_2",  "name": "Clover Club",      "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_3",  "name": "Mojito",           "unit": "мл", "volume": null, "price": 50000 },
+    { "id": "smoothies_detox_5", "name": "Sakura Dream",       "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_4",  "name": "Whiskey Sour",     "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_5",  "name": "Old Fashioned",    "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "alcohol_drinks_6",  "name": "Negroni",          "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "alcohol_drinks_7",  "name": "Paloma",           "unit": "мл", "volume": null, "price": 80000 },
+    { "id": "smoothies_detox_3", "name": "Cherry Garden",      "unit": "мл", "volume": null, "price": 80000 },
+    { "id": "smoothies_detox_4", "name": "Японский персик",    "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_8",  "name": "Апероль шприц",    "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_9",  "name": "Май Тай",          "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_10", "name": "Пина Колада",      "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "alcohol_drinks_11", "name": "Basil Smash",      "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_12", "name": "French 75",        "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "alcohol_drinks_13", "name": "Cosmopolitan",     "unit": "мл", "volume": null, "price": 80000 },
     { "id": "alcohol_drinks_14", "name": "Margarita",        "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "alcohol_drinks_15", "name": "Long Island",      "unit": "мл", "volume": null, "price": 80000 },
-    { "id": "alcohol_drinks_17", "name": "Manhattan",        "unit": "мл", "volume": null, "price": 80000 }
+    { "id": "alcohol_drinks_15", "name": "Long Island",      "unit": "мл", "volume": null, "price": 100000 },
   ],
   "beer": [
     { "id": "beer_1", "name": "Gunnersonn фильтр",               "unit": "л", "volume": 0.5, "price": 25000 },
@@ -187,7 +187,8 @@ export const barItems = {
   "liqueurs": [
     { "id": "liqueurs_1", "name": "Aperol",      "unit": "мл", "volume": 50, "price": 50000 },
     { "id": "liqueurs_2", "name": "Sheridan's",  "unit": "мл", "volume": 50, "price": 65000 },
-    { "id": "liqueurs_3", "name": "Baileys",     "unit": "мл", "volume": 50, "price": 60000 }
+    { "id": "liqueurs_3", "name": "Baileys",     "unit": "мл", "volume": 50, "price": 60000 },
+    { "id": "liqueurs_3", "name": "Jagermeister",     "unit": "мл", "volume": 50, "price": 50000 }
   ],
   "brandy": [
     { "id": "brandy_1", "name": "Henessy VS", "unit": "мл", "volume": 50, "price": 80000 },
@@ -208,7 +209,6 @@ export const barItems = {
     { "id": "whisky_6", "name": "Chivas Regal",  "unit": "мл", "volume": 50, "price": 85000 }
   ],
   "infusions": [
-    { "id": "infusions_1", "name": "Медовая настойка",    "unit": "мл", "volume": 50, "price": 80000 },
     { "id": "infusions_2", "name": "Ягодная настойка",    "unit": "мл", "volume": 50, "price": 80000 },
     { "id": "infusions_3", "name": "Перцовая настойка",   "unit": "мл", "volume": 50, "price": 80000 },
     { "id": "infusions_4", "name": "Фруктовая настойка",  "unit": "мл", "volume": 50, "price": 70000 },

@@ -73,7 +73,7 @@ export default function BusinessLunchPage() {
               {categories[0].name[lang]}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+            <div className="flex flex-col md:flex-row max-w-7xl mx-auto mt-6 px-4 gap-6">
               {businessLunchItems.businessLunch.map((d) => (
                 <div key={d.id} className="flex flex-col">
                   <div className="flex items-baseline mb-1 text-[#E0E0E0]">

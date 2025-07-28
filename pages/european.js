@@ -65,7 +65,7 @@ export default function EuropeanPage() {
     <div className="min-h-screen bg-base font-sans">
       <Header lang={lang} setLang={changeLang} currentPage="european" />
 
-      <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto mt-6 px-4 gap-6">
         <CategorySidebar
           categories={categories}
           activeCat={activeCat}
@@ -91,7 +91,7 @@ export default function EuropeanPage() {
                 {c.name[lang]}
               </h2>
 
-              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
                 {(europeanDishes[c.id] || []).map((d) => {
                   const isFav = favs.includes(d.id);
                   return (

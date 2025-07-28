@@ -31,6 +31,15 @@
   --shadow-elev: 0 2px 8px rgba(0,0,0,0.15);
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .dark { /* agar dark mode toggling qilmoqchi bo'lsang */
   --color-base: #273546;
   --color-card: #324A5F;
