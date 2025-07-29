@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Globe, Menu, X } from "lucide-react";
+import { Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 
 
 const menuCategories = [
@@ -18,56 +17,33 @@ export default function Header({ lang, setLang, currentPage }) {
   const gold = "text-[#e0d3a3]"; // oltin rang
   const grayLine = "bg-white/10"; // chiziq rangi
 
-  const [open, setOpen] = useState(false);
-
   const change = (v) => {
     setLang(v);
     i18n.changeLanguage(v);
-    setOpen(false);
   };
 
 
   return (
     <header className="sticky top-0 z-50 bg-transparent">
       <div className={`h-px w-full ${grayLine}`} />
-      <div className="flex items-center justify-between px-4 md:px-10 gap-4 py-4 bg-base shadow-elev relative">
-        <button
-          className="md:hidden text-white"
-          onClick={() => setOpen((o) => !o)}
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+      <div className="flex items-center px-4 md:px-10 gap-4 py-4 bg-base shadow-elev relative">
 
         <nav
-          className={`${
-            open ? 'flex' : 'hidden'
-          } md:flex flex-col md:flex-row gap-4 md:gap-0 absolute md:static top-full left-0 w-full md:w-auto bg-base md:bg-transparent p-4 md:p-0 shadow-elev md:shadow-none`}
+          className="flex overflow-x-auto gap-6 md:gap-8"
         >
           {menuCategories.map((m, idx) => (
-            <div key={m.id} className="flex items-center">
-              <Link
-                href={`/${m.id}`}
-                className={`relative font-forum text-white uppercase tracking-wide text-sm
-                  ${
-                    m.id === currentPage
-                      ? gold
-                      : 'text-white hover:text-[#e0d3a3]'
-                  }
-                  after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
-                  ${
-                    m.id === currentPage
-                      ? 'after:bg-[#e0d3a3]'
-                      : 'after:bg-transparent'
-                  }
-                `}
-                onClick={() => setOpen(false)}
-              >
-                {m.name[lang]}
-              </Link>
-              {idx < menuCategories.length - 1 && (
-                <span className="mx-6 inline-block w-2 h-2 border border-[#e0d3a3] rotate-45" />
-              )}
-            </div>
+            <Link
+              key={m.id}
+              href={`/${m.id}`}
+              className={`relative font-forum uppercase tracking-wide whitespace-nowrap text-sm px-3 md:px-4
+                ${m.id === currentPage ? gold : 'text-white hover:text-[#e0d3a3]'}
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
+                ${m.id === currentPage ? 'after:bg-[#e0d3a3]' : 'after:bg-transparent'}
+                before:content-[''] before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rotate-45 before:border before:border-[#e0d3a3] first:before:hidden`
+              }
+            >
+              {m.name[lang]}
+            </Link>
           ))}
         </nav>
 
