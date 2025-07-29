@@ -4,12 +4,10 @@ import { useTranslation } from 'react-i18next';
 import CategorySidebar from '@/components/CatalogSidebar';
 import Header from '@/components/Header';
 
-/* Faqat bitta bo‘lim */
 const categories = [
   { id: 'bread', icon: '🥖', name: { uz: 'Non', ru: 'Хлеб', en: 'Bread' } },
 ];
 
-/* Matnni tilga mos beruvchi yordamchi */
 const txt = (field, lang) =>
   typeof field === 'string'
     ? field
@@ -40,20 +38,43 @@ export default function BreadPage() {
     <div className="min-h-screen bg-base font-sans">
       <Header lang={lang} setLang={i18n.changeLanguage} currentPage="bread" />
 
-      <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">
-        <CategorySidebar
-          categories={categories}
-          activeCat={activeCat}
-          onCategoryClick={(id) => {
-            setActiveCat(id);
-            catRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }}
-          lang={lang}
-        />
+      {/* Mobile tab bar */}
+      <div className="md:hidden px-4 mt-4 overflow-x-auto no-scrollbar">
+        <nav className="flex gap-3">
+          {categories.map((c) => (
+            <button
+              key={c.id}
+              onClick={() => {
+                setActiveCat(c.id);
+                catRefs.current[c.id]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+              className={`shrink-0 px-4 py-1 rounded-full font-forum uppercase text-sm tracking-wide 
+                ${activeCat === c.id ? "bg-[#e0d3a3] text-black" : "bg-white/10 text-white hover:bg-white/20"}`}
+            >
+              {c.name[lang]}
+            </button>
+          ))}
+        </nav>
+      </div>
 
-        <main className="flex-1">
-          {/* Hero rasm */}
-          <div className="relative h-[30vh] md:h-[40vh] w-full mb-8">
+      {/* Page layout */}
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto mt-6 px-4 gap-6">
+        {/* Desktop sidebar */}
+        <div className="hidden md:block">
+          <CategorySidebar
+            categories={categories}
+            activeCat={activeCat}
+            onCategoryClick={(id) => {
+              setActiveCat(id);
+              catRefs.current[id]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            lang={lang}
+          />
+        </div>
+
+        {/* Main content */}
+        <main className="flex-1 w-full mt-2">
+          <div className="relative h-[25vh] md:h-[40vh] w-full mb-8">
             <img src="/non.jpg" alt="Bread" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black opacity-50" />
           </div>
@@ -68,7 +89,7 @@ export default function BreadPage() {
               {categories[0].name[lang]}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6">
               {breadItems.bread.map((d) => (
                 <div key={d.id} className="flex flex-col">
                   <div className="flex items-baseline mb-1 text-[#E0E0E0]">
@@ -80,9 +101,6 @@ export default function BreadPage() {
                       {d.price.toLocaleString()} {t('som')}
                     </p>
                   </div>
-                  {/* <p className="text-sm text-gray-400 capitalize">
-                    {txt(d.description, lang)}
-                  </p> */}
                 </div>
               ))}
             </div>

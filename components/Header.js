@@ -53,32 +53,34 @@ export default function Header({ lang, setLang, currentPage }) {
         <nav
           className={`${
             open ? 'flex' : 'hidden'
-          } md:flex flex-col md:flex-row gap-4 md:gap-0 absolute md:static top-full left-0 w-full md:w-auto bg-base md:bg-transparent p-4 md:p-0 shadow-elev md:shadow-none`}
+          } md:flex flex-col md:flex-row gap-4 md:gap-9 absolute md:static top-full left-0 w-full md:w-auto bg-base md:bg-transparent p-4 md:p-0 shadow-elev md:shadow-none`}
         >
           {menuCategories.map((m, idx) => (
-            <div key={m.id} className="flex items-center">
-              <Link
-                href={`/${m.id}`}
-                className={`relative font-forum text-white uppercase tracking-wide text-sm 
-                  ${
-                    m.id === currentPage
-                      ? gold
-                      : "text-white hover:text-[#e0d3a3]"
-                  }
-                  after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
-                  ${
-                    m.id === currentPage
-                      ? "after:bg-[#e0d3a3]"
-                      : "after:bg-transparent"
-                  }
-                `}
-              >
-                {m.name[lang]}
-              </Link>
-              {idx < menuCategories.length - 1 && (
-                <span className="mx-6 inline-block w-2 h-2 border border-[#e0d3a3] rotate-45" />
-              )}
-            </div>
+           <div key={m.id} className="relative flex items-center">
+           <Link
+             href={`/${m.id}`}
+             className={`relative font-forum text-white uppercase tracking-wide text-sm 
+               ${
+                 m.id === currentPage
+                   ? gold
+                   : "text-white hover:text-[#e0d3a3]"
+               }
+               after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
+               ${
+                 m.id === currentPage
+                   ? "after:bg-[#e0d3a3]"
+                   : "after:bg-transparent"
+               }
+             `}
+           >
+             {m.name[lang]}
+           </Link>
+       
+           {/* Oradagi rombchani absolute qilib joylashtirdik */}
+           {idx < menuCategories.length - 1 && (
+             <span className="absolute right-[10px] md:right-[-20px] top-1/2 -translate-y-1/2 w-2 h-2 border border-[#e0d3a3] rotate-45 pointer-events-none" />
+           )}
+         </div>
           ))}
         </nav>
         <div className="flex items-center gap-2 ml-auto md:ml-0">

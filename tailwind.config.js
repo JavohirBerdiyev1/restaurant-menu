@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         forum: ['"Forum"', 'serif'],
+        oswald: ['"Oswald"','serif' ],
         dm: ['"DM Sans"', 'serif'],
       },
       backgroundImage: {

@@ -48,7 +48,7 @@ export default function IndexPage() {
     <div className="min-h-screen bg-base font-sans text-white">
       <Header lang={lang} setLang={changeLang} currentPage="home" />
 
-   <section className="relative h-[320px] md:h-[400px]">
+   <section className="relative h-[200px] md:h-[300px]">
 
   {/* background */}
   <img
@@ -62,7 +62,7 @@ export default function IndexPage() {
   {/* content */}
   <div className="relative z-10 h-full flex items-center">
     <div className="mx-auto max-w-6xl px-4 text-center">
-      <h1 className="text-balance font-forum text-[50px] md:text-6xl tracking-wide mb-4">
+      <h1 className="text-balance font-oswald text-[40px] md:text-6xl tracking-wide mb-4">
         {t('hero_title') || ' Nargile Restaurant'}
       </h1>
       {/* <p className="mx-auto max-w-2xl text-white/80 text-base md:text-lg mb-8">
@@ -90,7 +90,7 @@ export default function IndexPage() {
 
       <section
         id="menu"
-        className="max-w-6xl mx-auto px-4 py-12 grid gap-6 md:grid-cols-2"
+        className="max-w-6xl mx-auto px-10 py-12 grid gap-6 md:grid-cols-2"
       >
         {categories.map((c) => (
           <Link

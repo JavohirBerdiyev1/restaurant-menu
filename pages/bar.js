@@ -82,33 +82,54 @@ export default function BarPage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
+    return (
     <div className="min-h-screen w-full bg-base font-sans">
       <Header lang={lang} setLang={changeLang} currentPage="bar" />
-      <div className="flex  mx-auto mt-6 px-4 gap-6">
-        <CategorySidebar
-          categories={categories}
-          activeCat={activeCat}
-          onCategoryClick={(id) => {
-            setActiveCat(id);
-            const el = catRefs.current[id];
-            el?.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-          lang={lang}
-        />
 
-        <main className="flex-1">
-          {/* Hero rasm */}
-          <div className="relative h-[30vh] md:h-[40vh] w-full mb-8">
-            <img
-              src="/food/hero.jpg"
-              alt="Bartender"
-              className="w-full h-full object-cover"
-            />
+      {/* Mobile tab style category */}
+      <div className="md:hidden px-4 mt-4 overflow-x-auto no-scrollbar">
+        <nav className="flex gap-3">
+          {categories.map((c) => (
+            <button
+              key={c.id}
+              onClick={() => {
+                setActiveCat(c.id);
+                catRefs.current[c.id]?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className={`shrink-0 px-4 py-1 rounded-full font-forum uppercase text-sm tracking-wide 
+                ${activeCat === c.id ? "bg-[#e0d3a3] text-black" : "bg-white/10 text-white hover:bg-white/20"}`}
+            >
+              {c.name[lang]}
+            </button>
+          ))}
+        </nav>
+      </div>
+
+      {/* Main layout */}
+      <div className="flex flex-col md:flex-row mx-auto mt-6 px-4 gap-6">
+        {/* Sidebar (desktop only) */}
+        <div className="hidden md:block">
+          <CategorySidebar
+            categories={categories}
+            activeCat={activeCat}
+            onCategoryClick={(id) => {
+              setActiveCat(id);
+              const el = catRefs.current[id];
+              el?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+            lang={lang}
+          />
+        </div>
+
+        {/* Main content */}
+        <main className="flex-1 w-full mt-2">
+          {/* Hero image */}
+          <div className="relative h-[25vh] md:h-[40vh] w-full mb-8">
+            <img src="/food/hero.jpg" alt="Bartender" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black opacity-50" />
           </div>
 
-          {/* Mahsulotlar bo‘limlari */}
+          {/* Category sections */}
           {categories.map((c) => (
             <section
               key={c.id}
@@ -120,10 +141,9 @@ export default function BarPage() {
                 {c.name[lang]}
               </h2>
 
-              <div className="grid grid-cols-2 sm:grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6">
                 {(barItems[c.id] || []).map((d) => (
                   <div key={d.id} className="flex flex-col">
-                    {/* nom va narx */}
                     <div className="flex items-baseline mb-1 text-[#E0E0E0]">
                       <h3 className="text-sm tracking-wider uppercase whitespace-nowrap">
                         {getText(d.name)}
@@ -134,11 +154,9 @@ export default function BarPage() {
                       </p>
                     </div>
 
-                    {/* tavsif / o‘lcham */}
                     {(d.description || d.volume) && (
                       <p className="text-sm text-gray-400 capitalize">
-                        {getText(d.description) ||
-                          `${d.volume ?? ""}${d.unit ?? ""}`.trim()}
+                        {getText(d.description) || `${d.volume ?? ""}${d.unit ?? ""}`.trim()}
                       </p>
                     )}
                   </div>
