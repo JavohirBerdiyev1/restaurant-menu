@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+
 
 const menuCategories = [
   { id: "uzbek",    name: { uz: "Milliy taomlar",  ru: "Узбекская",   en: "Uzbek"    } },
@@ -22,47 +22,32 @@ export default function Header({ lang, setLang, currentPage }) {
     i18n.changeLanguage(v);
   };
 
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-transparent">
-      <div className={`h-0px w-full ${grayLine}`} />
-      <div className="flex items-center justify-between px-10 gap-8 py-4 sticky  bg-base shadow-elev">
-        {/* MENU */}
-        <nav className="flex gap-0">
+      <div className={`h-px w-full ${grayLine}`} />
+      <div className="flex items-center px-4 md:px-10 gap-4 py-4 bg-base shadow-elev relative">
+
+        <nav
+          className="flex overflow-x-auto gap-6 md:gap-8"
+        >
           {menuCategories.map((m, idx) => (
-            <div key={m.id} className="flex items-center">
-              <Link
-                href={`/${m.id}`}
-                className={`relative font-forum text-white uppercase tracking-wide text-sm 
-                  ${
-                    m.id === currentPage
-                      ? gold
-                      : "text-white hover:text-[#e0d3a3]"
-                  }
-                  after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
-                  ${
-                    m.id === currentPage
-                      ? "after:bg-[#e0d3a3]"
-                      : "after:bg-transparent"
-                  }
-                `}
-              >
-                {isClient && m.name[lang]}
-              </Link>
-              {idx < menuCategories.length - 1 && (
-                <span className="mx-6 inline-block w-2 h-2 border border-[#e0d3a3] rotate-45" />
-              )}
-            </div>
+            <Link
+              key={m.id}
+              href={`/${m.id}`}
+              className={`relative font-forum uppercase tracking-wide whitespace-nowrap text-sm px-3 md:px-4
+                ${m.id === currentPage ? gold : 'text-white hover:text-[#e0d3a3]'}
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
+                ${m.id === currentPage ? 'after:bg-[#e0d3a3]' : 'after:bg-transparent'}
+                before:content-[''] before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rotate-45 before:border before:border-[#e0d3a3] first:before:hidden`
+              }
+            >
+              {m.name[lang]}
+            </Link>
           ))}
         </nav>
 
-        {/* LANGUAGE SELECT */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ml-auto md:ml-0">
           <Globe className={`${gold} w-4 h-4`} />
           <select
             value={lang}

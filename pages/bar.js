@@ -85,7 +85,7 @@ export default function BarPage() {
   return (
     <div className="min-h-screen bg-base font-sans">
       <Header lang={lang} setLang={changeLang} currentPage="bar" />
-      <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto mt-6 px-4 gap-6">
         <CategorySidebar
           categories={categories}
           activeCat={activeCat}
@@ -120,7 +120,7 @@ export default function BarPage() {
                 {c.name[lang]}
               </h2>
 
-              <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6">
+              <div className="grid grid-cols-2 sm:grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6">
                 {(barItems[c.id] || []).map((d) => (
                   <div key={d.id} className="flex flex-col">
                     {/* nom va narx */}

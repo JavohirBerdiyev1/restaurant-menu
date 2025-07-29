@@ -77,7 +77,7 @@ export default function UzbekPage() {
       <Header lang={lang} setLang={changeLang} currentPage="uzbek" />
 
       {/* BODY */}
-      <div className="flex max-w-7xl mx-auto mt-6 px-4 gap-6">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto mt-6 px-4 gap-6">
         <CategorySidebar
           categories={categories}
           activeCat={activeCat}
@@ -101,7 +101,7 @@ export default function UzbekPage() {
                 {c.name[lang]}
               </h2>
 
-              <div className="grid grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fill,minmax(180px,1fr))] gap-4">
                 {(uzbekDishes[c.id] || []).map((d) => {
                   const isFav = favs.includes(d.id)
                   return (
