@@ -150,7 +150,7 @@ export default function BarPage() {
                       </h3>
                       <div className="flex-grow h-px border-b-2 border-double border-[#a37e2c] mx-4" />
                       <p className="text-sm whitespace-nowrap">
-                        {d.price ? d.price.toLocaleString() : "-"} {t("som")}
+                        {d.price ? d.price.toLocaleString() : "-"} {t("somm")}
                       </p>
                     </div>
 
