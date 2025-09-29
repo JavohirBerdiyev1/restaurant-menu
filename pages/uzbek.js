@@ -126,6 +126,9 @@ export default function UzbekPage() {
                       <div className="mt-2 font-forum text-[16px] text-accent">
                         {d?.price?.toLocaleString()} {t('somm')}
                       </div>
+                         <p className="text-[10px] font-dm text-text-muted line-clamp-2">
+                        {d.description[lang]}
+                      </p>
                     </div>
                   </div>
                 ))}

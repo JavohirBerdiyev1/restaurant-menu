@@ -22,14 +22,40 @@ export default function App({ Component, pageProps }) {
   if (!isClient) {
     return (
       <I18nextProvider i18n={i18n}>
-        <Component {...pageProps} />
+        {/*  <Component {...pageProps} /> */}
+        <div style={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#0f172a',
+          color: 'white',
+          fontSize: '1.25rem',
+          textAlign: 'center',
+          padding: '1rem'
+        }}>
+          Menu vaqtincha ishlamayapti
+        </div>
       </I18nextProvider>
     )
   }
 
   return (
     <I18nextProvider i18n={i18n}>
-      <Component {...pageProps} />
+      {/*  <Component {...pageProps} /> */}
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#0f172a',
+        color: 'white',
+        fontSize: '1.25rem',
+        textAlign: 'center',
+        padding: '1rem'
+      }}>
+        Menu vaqtincha ishlamayapti
+      </div>
     </I18nextProvider>
   );
 }
