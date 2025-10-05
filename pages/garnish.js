@@ -91,7 +91,7 @@ export default function GarnishPage() {
           {/* Section */}
           <section
             ref={(el) => (catRefs.current.garnish = el)}
-            className="mb-12 scroll-mt-24"
+            className="mb-12 scr oll-mt-24"
           >
             <h2 className="flex items-center gap-3 text-xl font-semibold mb-6 text-white">
               <span className="text-3xl">🍚</span>

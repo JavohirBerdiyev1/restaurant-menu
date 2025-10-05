@@ -868,7 +868,7 @@ export const uzbekDishes = {
         en: 'Samarkand Plov',
       },
       image: '/food/Самаркандский Плов.jpg',
-      price: 43000,
+      price: 40000,
       description: {
         uz: 'Guruch, mol go‘shti, sabzi, zig‘ir yog‘i, yog‘, bedana tuxumi, yangi qalampir, no‘xat, mayiz, zira, tuz',
         ru: 'Рис, мясо говядина, морковь, масло зигир, масло, перепелиное яйцо, свежий перец, горох, изюм, зира, соль',
